@@ -1,0 +1,60 @@
+{
+  "skill_name": "youtube-video-learning-assistant",
+  "evals": [
+    {
+      "id": 1,
+      "name": "知识类视频学习笔记",
+      "prompt": "这是我的 YouTube 视频整理稿，主题是如何建立个人知识管理系统。请不要做爆款拆解，只把它整理成一篇学习笔记，重点帮我理解核心观点、逻辑链条和可复用方法论，并落到我的 Obsidian 笔记体系里。",
+      "expected_output": "一篇保存到知识库草稿区的学习笔记，包含 frontmatter、基本信息、内容理解、方法论提炼、我的吸收、相关笔记区块，不包含开头钩子、风格判断、为什么能火等自媒体拆解内容。",
+      "files": [],
+      "assertions": [
+        {
+          "description": "文档包含 YAML Frontmatter",
+          "check": "contains_yaml_frontmatter"
+        },
+        {
+          "description": "文档包含内容理解和方法论提炼两个主体部分",
+          "check": "contains_learning_sections"
+        },
+        {
+          "description": "文档不包含对标拆解或为什么能火的写法",
+          "check": "avoids_benchmark_analysis_language"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "短视频内容整理",
+      "prompt": "这是一个 3 分钟短视频转录稿，主题是拖延。帮我整理成学习笔记，重点提炼核心观点和立即可用的方法，不要分析传播钩子。",
+      "expected_output": "短而实用的学习笔记，重点突出核心问题、核心观点、简明方法步骤和可执行动作，不强行展开复杂结构。",
+      "files": [],
+      "assertions": [
+        {
+          "description": "短内容分析保持克制，没有冗长空话",
+          "check": "keeps_short_content_concise"
+        },
+        {
+          "description": "输出聚焦可执行方法",
+          "check": "extracts_actionable_methods"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "方法论型视频提炼",
+      "prompt": "这是一个关于写作方法的视频整理稿，核心概念是 show, don't tell。请把它当成方法论来学，帮我整理成可复用框架、概念解释、应用步骤和自检问题，不要写风格借鉴。",
+      "expected_output": "一篇方法论导向的学习笔记，突出框架提炼、概念说明、应用模板和误区提醒，而不是做表达风格或内容创作分析。",
+      "files": [],
+      "assertions": [
+        {
+          "description": "区分方法论提炼和风格分析",
+          "check": "focuses_on_methodology_not_style"
+        },
+        {
+          "description": "输出包含可复用框架或检查清单",
+          "check": "includes_reusable_framework"
+        }
+      ]
+    }
+  ]
+}

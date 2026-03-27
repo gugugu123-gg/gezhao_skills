@@ -1,0 +1,43 @@
+{
+  "skill_name": "youtube-video-benchmark-analysis",
+  "evals": [
+    {
+      "id": 1,
+      "name": "知识型视频案例拆解",
+      "prompt": "这是一个 YouTube 视频文稿，主题是个人成长。请不要把它做成学习笔记，而是从自媒体对标角度拆解：它为什么容易被看下去、结构哪里好、哪些表达值得借鉴、哪些地方不能硬抄，并放进我的案例库。",
+      "expected_output": "一篇案例拆解文档，包含案例定位、为什么容易被看下去、值得学习的地方、迁移与仿写，不是纯内容总结。",
+      "files": [],
+      "assertions": [
+        {
+          "description": "输出包含为什么能打的拆解部分",
+          "check": "contains_why_it_works_analysis"
+        },
+        {
+          "description": "区分通用技巧与个人风格",
+          "check": "distinguishes_transferable_vs_personal_style"
+        },
+        {
+          "description": "结果保存到案例库语境而不是个人学习笔记语境",
+          "check": "targets_case_library_workflow"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "只有文稿的数据克制分析",
+      "prompt": "我这里只有一份视频文稿，没有播放量、封面和标题。请帮我分析它从文稿与表达上为什么可能容易传播，同时提醒我哪些判断只是基于文本层面的推断。",
+      "expected_output": "分析时明确区分文本层面可判断的因素和无法确认的数据层因素，不虚构播放表现。",
+      "files": [],
+      "assertions": [
+        {
+          "description": "明确声明判断基于文稿而非真实数据",
+          "check": "qualifies_inference_when_metrics_missing"
+        },
+        {
+          "description": "不编造播放量或平台反馈",
+          "check": "does_not_invent_performance_metrics"
+        }
+      ]
+    }
+  ]
+}

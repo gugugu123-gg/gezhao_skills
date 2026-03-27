@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Interactive Study"
+  short_description: "Mastery-based interactive study workflow"
+  default_prompt: "Use $interactive-study-skill to run a mastery-based one-on-one study session for my topic."
